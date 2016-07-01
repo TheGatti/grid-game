@@ -3,10 +3,46 @@
   <head>
     <meta charset="utf-8">
     <title>Grid Shiz</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <section id="grid-direction">
+
+  <!-- Player Selection Screen -->
+
+  <a href="#startthegame">Let's get it started in here.</a>
+  <a href="#restart">Maaannnnn... lemme try again.</a>
+
+  <div class="startMenu">
+    <section id="player-creator" class= "">
+  			<div id="player">
+    				<input id="user-name" type="text" name="name" value="" placeholder="Player name">
+    			</div>
+          <button id="start"> It's Grid Time! </button>
+        <br>
+
+          <button id="small"><a href="#smallButton"> Miata </a></button>
+            <p>
+              Low health, but uses minimal energy.
+            </p>
+          <br>
+          <button id="medium"><a href="#mediumButton"> Suburban </a></button>
+            <p>
+              Great for getting groceries, alright at Grid Explorer.
+            </p>
+          <br>
+          <button id="ridiculous"><a href="#ridiculousButton"> Tank </a></button>
+            <p>
+              High health, but uses a lot of energy.
+            </p>
+      </div>
+    </section>
+  </div>  
+
+
+
+<!-- Game Screen -->
+
+    <section id="grid-direction" class="hidden">
       <div id="yAxis">
 
         -
@@ -17,22 +53,36 @@
         -
 
       </div>
+      <div id="energy">
+
+        -
+
+      </div>
 			<button id="up"> UP </button>
 			<button id="down"> DOWN </button>
       <button id="left"> LEFT </button>
       <button id="right"> RIGHT </button>
-      <!-- <div id="position">0,0</div> -->
+
+      <div id = "energy" class="Thisisenergy">
+
+      </div>
+      <div id = "moves" class="Thisismoves">
+
+      </div>
+
     </section>
-    <section id="player-creator">
-			<div id="player">
-				<input type="text" name="name" value="" placeholder="Player name">
-			</div>
-		</section>
+
+
+<!-- Game Over Screen -->
+    <section id="gameOver" class= "hidden">
+      <h1>IT'S OVER, MAN!</h1>
+      <button id="new-game"> Try Again? </button>
+    </section>
   </body>
 
-  <script src="/Users/Gatti/tiy/backbone_intro/node_modules/underscore/underscore-min.js" charset="utf-8"></script>
-  <script src="/Users/Gatti/tiy/backbone_intro/node_modules/jquery/dist/jquery.min.js" charset="utf-8"></script>
-  <script src="/Users/Gatti/tiy/backbone_intro/node_modules/backbone/backbone-min.js" charset="utf-8"></script>
+  <script src="http://underscorejs.org/underscore-min.js"></script>
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+	<script src="http://backbonejs.org/backbone-min.js"></script>
   <script src="app.js">
 
   </script>
