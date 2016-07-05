@@ -6,7 +6,7 @@ module.exports = Backbone.Model.extend({
        xValue: Math.floor(Math.random() * 10 + 1),
        yValue: Math.floor(Math.random() * 10 + 1),
        userName:"dude_man",
-       energy:10,
+       energy:20,
        moves:0,
        playerType: '',
    },
@@ -15,28 +15,36 @@ module.exports = Backbone.Model.extend({
      if (this.get('yValue') < 10) {
          this.set('yValue', this.get('yValue') + 1);
        }
-        // this.set("playerEnergy", this.get("playerEnergy") -1);
+       if (this.get('energy') <= 0) {
+           this.trigger('gameEnded', this)
+       }
       },
 
    down: function () {
-     if (this.get('yValue') > 0) {
+     if (this.get('yValue') > 1) {
          this.set('yValue', this.get('yValue') - 1);
        }
-        //  this.set("playerEnergy", this.get("playerEnergy") -1);
+       if (this.get('energy') <= 0) {
+           this.trigger('gameEnded', this)
+       }
    },
 
    left: function () {
-     if (this.get('xValue') > 0) {
+     if (this.get('xValue') > 1) {
          this.set('xValue', this.get('xValue') - 1);
        }
-        //  this.set("playerEnergy", this.get("playerEnergy") -1);
+       if (this.get('energy') <= 0) {
+           this.trigger('gameEnded', this)
+       }
    },
 
    right: function () {
      if (this.get('xValue') < 10) {
          this.set('xValue', this.get('xValue') + 1);
        }
-        //  this.set("playerEnergy", this.get("playerEnergy") -1);
+       if (this.get('energy') <= 0) {
+           this.trigger('gameEnded', this)
+       }
   },
 
   changeMoves: function(){
@@ -45,5 +53,10 @@ module.exports = Backbone.Model.extend({
 
    decreaseEnergy: function(){
      this.set('energy', this.get('energy') - 1 );
-   }
+   },
+
+   tryAgain: function(){
+        this.set(this.defaults);
+        this.trigger('startOver', this);
+   },
 });

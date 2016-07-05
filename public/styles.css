@@ -1,3 +1,16 @@
 .hidden {
   display: none;
 }
+div#grid_container {
+    width: 120px;
+}
+.grid-cell {
+    width: 10px;
+    height: 10px;
+    border: 1px solid #eee;
+    background-color: #23B383;
+    float: left;
+}
+div#player {
+    background-color: #9C9E9D;
+}

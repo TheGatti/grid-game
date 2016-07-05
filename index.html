@@ -1,89 +1,93 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
     <title>Grid Shiz</title>
     <link rel="stylesheet" href="styles.css">
-  </head>
-  <body>
+</head>
 
-  <!-- Player Selection Screen -->
+<body>
 
-  <a href="#startthegame">Let's get it started in here.</a>
-  <a href="#restart">Maaannnnn... lemme try again.</a>
+    <!-- Player Selection Screen -->
 
-  <div class="startMenu">
-    <section id="player-creator" class= "">
-  			<div id="player">
-    				<input id="user-name" type="text" name="name" value="" placeholder="Player name">
-    			</div>
-          <button id="start"> It's Grid Time! </button>
-        <br>
-
-          <button id="small"><a href="#smallButton"> Miata </a></button>
-            <p>
-              Low health, but uses minimal energy.
-            </p>
-          <br>
-          <button id="medium"><a href="#mediumButton"> Suburban </a></button>
-            <p>
-              Great for getting groceries, alright at Grid Explorer.
-            </p>
-          <br>
-          <button id="ridiculous"><a href="#ridiculousButton"> Tank </a></button>
-            <p>
-              High health, but uses a lot of energy.
-            </p>
-      </div>
-    </section>
-  </div>  
+    <a href="#startthegame">Let's get it started in here.</a>
 
 
+    <div id="startMenu">
+        <section id="player-creator" class="">
+                <input id="user-name" type="text" name="name" value="" placeholder="Player name">
+            <br>
 
-<!-- Game Screen -->
+            <div id="vehicle-type" class="">
+                <button id="small"><a href="#smallButton"> Miata </a></button>
+                <p>
+                    Low health, but uses minimal energy.
+                </p>
+                <br>
+                <button id="medium"><a href="#mediumButton"> Suburban </a></button>
+                <p>
+                    Great for getting groceries, alright at Grid Explorer.
+                </p>
+                <br>
+                <button id="ridiculous"><a href="#ridiculousButton"> Tank </a></button>
+                <p>
+                    High health, but uses a lot of energy.
+                </p>
+            </div>
+        </section>
+    </div>
+
+
+
+    <!-- Game Screen -->
 
     <section id="grid-direction" class="hidden">
-      <div id="yAxis">
 
-        -
+        <div>
+            <label for="yAxis"> Y Position: </label>
+            <span id="yAxis">-</span>
+        </div>
 
-      </div>
-      <div id="xAxis">
+        <div>
+            <label for="xAxis"> X Position: </label>
+            <span id="xAxis">-</span>
+        </div>
 
-        -
+        <div>
+            <label for="energy"> Energy Remaining: </label>
+            <span id="energy">-</span>
+        </div>
 
-      </div>
-      <div id="energy">
+        <div>
+            <label for="moves"> Total Moves: </label>
+            <span id="moves">-</span>
+        </div>
 
-        -
+        <div id="grid_container">
 
-      </div>
-			<button id="up"> UP </button>
-			<button id="down"> DOWN </button>
-      <button id="left"> LEFT </button>
-      <button id="right"> RIGHT </button>
+        </div>
 
-      <div id = "energy" class="Thisisenergy">
+        <button id="up"> UP </button>
+        <button id="down"> DOWN </button>
+        <button id="left"> LEFT </button>
+        <button id="right"> RIGHT </button>
 
-      </div>
-      <div id = "moves" class="Thisismoves">
-
-      </div>
 
     </section>
 
 
-<!-- Game Over Screen -->
-    <section id="gameOver" class= "hidden">
-      <h1>IT'S OVER, MAN!</h1>
-      <button id="new-game"> Try Again? </button>
+    <!-- Game Over Screen -->
+    <section id="gameOver" class="hidden">
+        <h1>GAME OVER, MAN!</h1>
+        <button id="new-game">Maaannnnn... lemme try again.</button>
     </section>
-  </body>
+</body>
 
-  <script src="http://underscorejs.org/underscore-min.js"></script>
-	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-	<script src="http://backbonejs.org/backbone-min.js"></script>
-  <script src="app.js">
+<script src="http://underscorejs.org/underscore-min.js"></script>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="http://backbonejs.org/backbone-min.js"></script>
+<script src="app.js">
+</script>
 
-  </script>
 </html>
